@@ -38,12 +38,15 @@ const Mile83autos_LLM_Rules = {
     ${sanitise_data}
 
     IMPORTANT PRODUCT LOGIC:
+    - use .length to the sanitise_data to get the number of available cars , dont include the sold car
     - A product is available ONLY if "isSold" field is false.
     - A product is sold if "isSold" is true.
     - When asked about available cars, NEVER list cars with field "isSold = true".
     - When asked for the number of available cars, count only those with field "isSold = false"
     - If a product have been sold , dont list it 
-
+    - if the field "isSold=false" please dont show it  
+    - the car "Toyota Camry XSE (2023)" is not available and is sold
+    - if "Toyota Camry XSE (2023)" has been sold dont add it to the number of available cars 
     RESPONSE STYLE:
     - Keep responses short, friendly, simple, and professional.
     - Speak conversationally.
